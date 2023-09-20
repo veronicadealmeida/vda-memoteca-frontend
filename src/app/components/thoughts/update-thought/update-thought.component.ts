@@ -27,12 +27,15 @@ export class UpdateThoughtComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.service.getById(parseInt(id!)).subscribe((thought) => {
-      this.thought = thought;
-    });
+    // this.service.getById(parseInt(id!)).subscribe((thought) => {
+    this.thought = this.mock.finById(id);
+    console.log(id);
+    console.log(this.thought);
+    // });
   }
 
   updateThought() {
+    const id = this.route.snapshot.paramMap.get('id');
     this.mock.update(this.thought);
     this.router.navigate(['/listThought']);
   }

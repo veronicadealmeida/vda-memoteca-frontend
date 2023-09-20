@@ -33,10 +33,10 @@ export class DeleteThoughtComponent implements OnInit {
   }
 
   deletethought() {
-    if (this.thought.id) {
-      this.mock.delete(this.thought);
-      this.router.navigate(['/listThought']);
-    }
+    const id = this.route.snapshot.paramMap.get('id');
+    console.log(id);
+    this.mock.delete(id);
+    this.router.navigate(['/listThought']);
   }
 
   cancel() {

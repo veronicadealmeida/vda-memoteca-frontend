@@ -17,14 +17,22 @@ export class MockThoughtService {
     return this.MockThought.push(thought);
   }
 
-  delete(thought: Thought) {
-    return (this.MockThought = this.MockThought.filter(
-      (t: Thought) => t.id != thought.id
-    ));
+  delete(id: any) {
+    this.MockThought = this.MockThought.filter((t: Thought) => t.id != id);
+    return this.MockThought;
   }
 
   update(thought: Thought) {
-    this.delete(thought);
-    return this.MockThought.push(thought);
+    console.log('thought');
+    console.log(thought);
+    this.MockThought.push(thought);
+    this.delete(thought.id);
+    return this.MockThought;
+  }
+
+  finById(id: any) {
+    const MockUpdate = this.MockThought.filter((t: Thought) => t.id == id);
+    console.log(MockUpdate);
+    return MockUpdate[0];
   }
 }
