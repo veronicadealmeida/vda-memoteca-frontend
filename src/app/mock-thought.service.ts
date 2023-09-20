@@ -6,6 +6,7 @@ import { Thought } from './components/thoughts/thought';
 })
 export class MockThoughtService {
   private MockThought = require('src/assets/db.json');
+  private id = 15;
 
   constructor() {}
 
@@ -14,7 +15,9 @@ export class MockThoughtService {
   }
 
   create(thought: Thought) {
-    return this.MockThought.push(thought).sort(this.sortMock);
+    thought['id'] = this.id;
+    return this.MockThought.push(thought);
+    this.id++;
   }
 
   delete(id: any) {
