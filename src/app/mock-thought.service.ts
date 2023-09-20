@@ -25,8 +25,8 @@ export class MockThoughtService {
   update(thought: Thought) {
     console.log('thought');
     console.log(thought);
-    this.MockThought.push(thought);
     this.delete(thought.id);
+    this.MockThought.push(thought);
     return this.MockThought;
   }
 
