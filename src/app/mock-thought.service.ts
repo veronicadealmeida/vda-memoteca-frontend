@@ -10,29 +10,36 @@ export class MockThoughtService {
   constructor() {}
 
   list() {
-    return this.MockThought;
+    return this.MockThought.sort(this.sortMock);
   }
 
   create(thought: Thought) {
-    return this.MockThought.push(thought);
+    return this.MockThought.push(thought).sort(this.sortMock);
   }
 
   delete(id: any) {
     this.MockThought = this.MockThought.filter((t: Thought) => t.id != id);
-    return this.MockThought;
+    return this.MockThought.sort(this.sortMock);
   }
 
   update(thought: Thought) {
-    console.log('thought');
-    console.log(thought);
     this.delete(thought.id);
     this.MockThought.push(thought);
-    return this.MockThought;
+    return this.MockThought.sort(this.sortMock);
   }
 
   finById(id: any) {
     const MockUpdate = this.MockThought.filter((t: Thought) => t.id == id);
-    console.log(MockUpdate);
     return MockUpdate[0];
+  }
+
+  sortMock(a: any, b: any) {
+    if (a.id < b.id) {
+      return 1;
+    }
+    if (a.id > b.id) {
+      return -1;
+    }
+    return 0;
   }
 }
