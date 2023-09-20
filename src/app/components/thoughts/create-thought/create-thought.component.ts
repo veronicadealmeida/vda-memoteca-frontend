@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { Thought } from './../thought';
 import { ThoughtService } from './../thought.service';
+import { MockThoughtService } from 'src/app/mock-thought.service';
 
 @Component({
   selector: 'app-create-thought',
@@ -16,14 +17,17 @@ export class CreateThoughtComponent implements OnInit {
     model: 'modelo1',
   };
 
-  constructor(private service: ThoughtService, private router: Router) {}
+  constructor(
+    private service: ThoughtService,
+    private router: Router,
+    private mock: MockThoughtService
+  ) {}
 
   ngOnInit(): void {}
 
   createThought() {
-    this.service.create(this.thought).subscribe(() => {
-      this.router.navigate(['/listThought']);
-    });
+    this.mock.create(this.thought);
+    this.router.navigate(['/listThought']);
   }
 
   cancel() {

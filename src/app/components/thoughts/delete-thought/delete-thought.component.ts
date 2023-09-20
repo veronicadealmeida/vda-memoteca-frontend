@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { ThoughtService } from './../thought.service';
 import { Thought } from './../thought';
+import { MockThoughtService } from 'src/app/mock-thought.service';
 
 @Component({
   selector: 'app-delete-thought',
@@ -20,7 +21,8 @@ export class DeleteThoughtComponent implements OnInit {
   constructor(
     private service: ThoughtService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private mock: MockThoughtService
   ) {}
 
   ngOnInit(): void {
@@ -32,9 +34,8 @@ export class DeleteThoughtComponent implements OnInit {
 
   deletethought() {
     if (this.thought.id) {
-      this.service.delete(this.thought.id).subscribe(() => {
-        this.router.navigate(['/listThought']);
-      });
+      this.mock.delete(this.thought);
+      this.router.navigate(['/listThought']);
     }
   }
 

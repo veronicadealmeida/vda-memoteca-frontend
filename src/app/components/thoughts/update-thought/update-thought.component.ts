@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Thought } from './../thought';
 import { ThoughtService } from './../thought.service';
+import { MockThoughtService } from 'src/app/mock-thought.service';
 
 @Component({
   selector: 'app-update-thought',
@@ -20,7 +21,8 @@ export class UpdateThoughtComponent implements OnInit {
   constructor(
     private service: ThoughtService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private mock: MockThoughtService
   ) {}
 
   ngOnInit(): void {
@@ -31,9 +33,8 @@ export class UpdateThoughtComponent implements OnInit {
   }
 
   updateThought() {
-    this.service.update(this.thought).subscribe(() => {
-      this.router.navigate(['/listThought']);
-    });
+    this.mock.update(this.thought);
+    this.router.navigate(['/listThought']);
   }
 
   cancel() {

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 import { Thought } from './thought';
+import { MockThoughtService } from 'src/app/mock-thought.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,10 +11,10 @@ import { Thought } from './thought';
 export class ThoughtService {
   private readonly API = 'http://localhost:3000/thoughs';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private mock: MockThoughtService) {}
 
   list(): Observable<Thought[]> {
-    return this.http.get<Thought[]>(this.API);
+    return this.mock.list();
   }
 
   create(thought: Thought): Observable<Thought> {
