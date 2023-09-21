@@ -7,14 +7,14 @@
   },
   {
     "id": 3,
-    "content": "Passo intormações para o componente filho!!!",
+    "content": "continue a codar... continue a codar... continue a codar... continue a codar... continue a codar... continue a codar... continue a codar... continue a codar...",
     "authorship": "Componente pai!",
     "model": "modelo3"
   },
   {
     "id": 4,
-    "content": "Minha propriedade é decorada com @Input",
-    "authorship": "Componente filho",
+    "content": "Ma minha máquina funciona",
+    "authorship": "Dev!",
     "model": "modelo3"
   },
   {
@@ -25,25 +25,25 @@
   },
   {
     "id": 6,
-    "content": "Passo intormações para o componente filho",
-    "authorship": "Componente pai",
+    "content": "Pedras no caminho? Eu guardo todas. Um dia vou construir um castelo.",
+    "authorship": "desconhecido",
     "model": "modelo2"
   },
   {
     "id": 7,
-    "content": "Minha propriedade é decorada com @Input",
-    "authorship": "Componente filho",
+    "content": "Se podemos sonhar, também podemos tornar nossos sonhos realidade.",
+    "authorship": "Tom Fitzgerald",
     "model": "modelo3"
   },
   {
-    "content": "outro pensamento",
-    "authorship": "eu tbm",
+    "content": "Acredite que você pode, assim você já está no meio do caminho.",
+    "authorship": "Theodore Roosevelt",
     "model": "modelo3",
     "id": 9
   },
   {
-    "content": "vovó fará o almoço",
-    "authorship": "euzinha",
+    "content": "Tudo o que um sonho precisa para ser realizado é alguém que acredite que ele possa ser realizado.",
+    "authorship": "Roberto Shinyashiki",
     "model": "modelo3",
     "id": 10
   }
