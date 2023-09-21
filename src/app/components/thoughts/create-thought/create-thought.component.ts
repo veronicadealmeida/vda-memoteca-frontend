@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Thought } from './../thought';
@@ -26,8 +26,10 @@ export class CreateThoughtComponent implements OnInit {
   ngOnInit(): void {}
 
   createThought() {
-    this.mock.create(this.thought);
-    this.router.navigate(['/listThought']);
+    if (this.thought.content && this.thought.authorship && this.thought.model) {
+      this.mock.create(this.thought);
+      this.router.navigate(['/listThought']);
+    }
   }
 
   cancel() {

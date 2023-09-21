@@ -14,6 +14,7 @@
       id="pensamento"
       name="pensamento"
       placeholder="Digite o pensamento"
+      [required]="true"
       [(ngModel)]="thought.content"
     />
     <label for="autoria">Autoria</label>
@@ -23,6 +24,7 @@
       id="autoria"
       name="autoria"
       placeholder="Digite a autoria ou fonte"
+      [required]="true"
       [(ngModel)]="thought.authorship"
     />
 
@@ -36,6 +38,7 @@
             id="modelo1"
             value="modelo1"
             name="modelo-card"
+            [required]="true"
             [(ngModel)]="thought.model"
           />
           <div class="custom-radio">
